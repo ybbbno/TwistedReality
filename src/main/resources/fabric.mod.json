@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "twistedreality",
+  "version": "${version}",
+  "name": "TwistedReality",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/twistedreality/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.deadybbb.twistedreality.client.TwistedRealityDataGenerator"
+    ],
+    "client": [
+      "me.deadybbb.twistedreality.client.TwistedRealityClient"
+    ],
+    "main": [
+      "me.deadybbb.twistedreality.TwistedReality"
+    ]
+  },
+  "mixins": [
+    "twistedreality.mixins.json",
+    {
+      "config": "twistedreality.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
